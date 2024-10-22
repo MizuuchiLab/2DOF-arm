@@ -12,11 +12,6 @@ void setup() {
 }
 
 long TMAX=(50);
-#define L1  (80)  // Length of the link1 [mm]
-#define L2  (60)  // Length of the link2 [mm]
-#define XC  (110) // Center of the circle [mm]
-#define YC  (0)   // Center of the circle [mm]
-#define R   (15)  // Radius of the circle [mm]
 #define RAD2DEG(RAD)  (180*RAD/PI)
 
 void loop() {
@@ -38,6 +33,12 @@ void loop() {
   }
   Serial.println("End");
 }
+
+#define L1  (80)  // Length of the link1 [mm]
+#define L2  (60)  // Length of the link2 [mm]
+#define XC  (110) // Center of the circle [mm]
+#define YC  (0)   // Center of the circle [mm]
+#define R   (15)  // Radius of the circle [mm]
 
 float calc_theta1 (float xe, float ye) {
   float theta1;
