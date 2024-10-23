@@ -16,6 +16,14 @@ void setup() {
 long TMAX=(50);
 #define RAD2DEG(RAD)  (180*RAD/PI)
 
+#define L1  (80)  // Length of the link1 [mm]
+#define L2  (60)  // Length of the link2 [mm]
+#define XC  (110) // Center of the circle [mm]
+#define YC  (0)   // Center of the circle [mm]
+#define R   (15)  // Radius of the circle [mm]
+
+#define THETA2SERVO(theta) ((theta)+90) // from theta to servo command angle
+
 void loop() {
   float rad, xe, ye, theta1, theta2;
   int theta1deg, theta2deg;
@@ -28,19 +36,13 @@ void loop() {
     theta1=calc_theta1(xe, ye);
     theta2=calc_theta2(xe, ye);
     theta1deg=RAD2DEG(theta1); theta2deg=RAD2DEG(theta2);
-//    myservo1.write(theta1deg));
-//    myservo2.write(theta2deg);
+//    myservo1.write(THETA2SERVO(theta1deg));
+//    myservo2.write(THETA2SERVO(theta2deg));
     Serial.print(theta1deg); Serial.print(", "); Serial.println(theta2deg);
     delay(20);
   }
   Serial.println("End");
 }
-
-#define L1  (80)  // Length of the link1 [mm]
-#define L2  (60)  // Length of the link2 [mm]
-#define XC  (110) // Center of the circle [mm]
-#define YC  (0)   // Center of the circle [mm]
-#define R   (15)  // Radius of the circle [mm]
 
 float calc_theta1 (float xe, float ye) {
   float theta1;

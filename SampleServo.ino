@@ -13,14 +13,16 @@ void setup() {
 
 long TMAX=(50);
 
+#define THETA2SERVO(theta) ((theta)+90) // from theta to servo command angle
+
 void loop() {
   int theta1deg, theta2deg;
   // put your main code here, to run repeatedly:
   for (int t = 0; t < TMAX; t++) {
     theta1deg = -45 + 90 * t/TMAX;
     theta2deg =  45 - 90 * t/TMAX;
-    myservo1.write(theta1deg));
-    myservo2.write(theta2deg);
+    myservo1.write(THETA2SERVO(theta1deg));
+    myservo2.write(THETA2SERVO(theta2deg));
     Serial.print(theta1deg); Serial.print(", "); Serial.println(theta2deg);
     delay(100);
   }
