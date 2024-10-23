@@ -4,8 +4,8 @@ Servo myservo1, myservo2;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  myservo1.attach( 9, 920, 2120);
-  myservo2.attach(10, 920, 2120);
+  myservo1.attach( 9, 834, 2168);
+  myservo2.attach(10, 834, 2168);
   myservo1.write(90);
   myservo2.write(90);
   delay(1000);
